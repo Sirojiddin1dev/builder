@@ -13,6 +13,7 @@ class Product(models.Model):
         ('Forma','Forma')
     )
     category = models.CharField(max_length=55, choices=PRODUCT)
+    view = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -21,7 +22,7 @@ class Product(models.Model):
 class Blog(models.Model):
     title = models.CharField(max_length=55)
     img = models.ImageField(upload_to='blog_image/')
-    description = models.CharField(max_length=255)
+    description = models.CharField(max_length=55)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     date = models.DateTimeField(auto_now=True)
