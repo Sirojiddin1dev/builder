@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from .models import *
+
 
 def index_view(request):
-    return render(request, 'index.html')
+    context = {
+        'product': Product.objects.all().order_by('-view')[:5],
+        'blog': Blog.objects.all().order_by('-id')[:5],
+    }
+    return render(request, 'index.html', context)
 
