@@ -25,7 +25,6 @@ class Blog(models.Model):
     text = models.TextField()
     created_at = models.DateTimeField(auto_now=True)
     date = models.DateTimeField(auto_now=True)
-    view = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
