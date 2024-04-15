@@ -74,7 +74,7 @@
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="index.html">Каталог</a>
+                                    <a class="header__menu--link" href="{% url 'index_url' %}">Каталог</a>
                                 </li>
                                 <li class="header__menu--items mega__menu--items">
                                     <a class="header__menu--link" href="about.html">О нас</a>
@@ -360,24 +360,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide ">
-                        <div class="hero__slider--items hero__slider--bg slider2">
-                            <div class="container-fluid">
-                                <div class="hero__slider--items__inner">
-                                    <div class="row">
-                                        <div class="col-lg-6 offset-lg-6">
-                                            <div class="slider__content text-center">
-                                                <h2 class="slider__content--maintitle text-white h1">Фасадные системы Gold Klinker</h2>
-                                                <p class="slider__content--desc text-white mb-35 d-sm-2-none">Уникальная система крепления обеспечивает круглогодичный надежный монтаж</p>
-                                                <a class="slider__content--btn primary__btn" href="contact.html">Каталог</a>
-                                                <a class="slider__content--btn primary__btn" href="contact.html">Где купить?</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% for i in banner %}
                     <div class="swiper-slide ">
                         <div class="hero__slider--items hero__slider--bg slider3">
                             <div class="container-fluid">
@@ -385,12 +368,8 @@
                                     <div class="row row-cols-1">
                                         <div class="col">
                                             <div class="slider__content">
-                                                <h2 class="slider__content--maintitle text-white h1">Фасадные системы Gold Klinker</h2>
-                                                <p class="slider__content--desc text-white mb-35 d-sm-2-none">
-                                                Запатентованная российская система фиброцементных панелей для навесных вентилируемых фасадов
-                                                Каталог
-                                                Где купить?
-                                                </p>
+                                                <h2 class="slider__content--maintitle text-white h1">{{ i.title }}</h2>
+                                                <p class="slider__content--desc text-white mb-35 d-sm-2-none">{{ i.text }}</p>
                                                 <a class="slider__content--btn primary__btn" href="contact.html">Каталог</a>
                                                 <a class="slider__content--btn primary__btn" href="contact.html">Где купить?</a>
                                             </div>
@@ -400,6 +379,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper__nav--btn swiper-button-next"></div>
                 <div class="swiper__nav--btn swiper-button-prev"></div>

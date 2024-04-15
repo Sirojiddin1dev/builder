@@ -10,7 +10,7 @@ def blog_view(request):
 
 def blog_banner_view(request):
     context = {
-        'img': Blog.objects.all().order_by('-id')[:2]
+        'banner': Blog.objects.all().order_by('-id')[:2]
     }
     return render(request,'blog.html', context)
 

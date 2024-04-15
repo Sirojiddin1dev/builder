@@ -10,8 +10,8 @@
                         <div class="breadcrumb__content">
                             <h1 class="breadcrumb__content--title text-white mb-10">Blog Grid</h1>
                             <ul class="breadcrumb__content--menu d-flex">
-                                <li class="breadcrumb__content--menu__items"><a class="text-white" href="index.html">Home</a></li>
-                                <li class="breadcrumb__content--menu__items"><span class="text-white">Blog Grid</span></li>
+                                <li class="breadcrumb__content--menu__items"><a class="text-white" href="{% url 'index_url' %}">Home</a></li>
+                                <li class="breadcrumb__content--menu__items"><span class="text-white">Blog</span></li>
                             </ul>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="col mb-30">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog5.webp" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{{ i.img.url }}" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -43,7 +43,7 @@
                                             {{ i.date }}
                                         </li>
                                     </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">{{ i.title }}</a></h3>
+                                    <h3 class="blog__content--title h4"><a href="{% url 'blog-details' %}">{{ i.title }}</a></h3>
                                     <p class="blog__content--desc">{{ i.text }}</p>
                                     <a class="blog__content--btn primary__btn" href="{% url 'blog-details' %}">Read more </a>
                                 </div>
