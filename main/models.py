@@ -23,7 +23,6 @@ class Blog(models.Model):
     img = models.ImageField(upload_to='blog_image/')
     description = models.CharField(max_length=255)
     text = models.TextField()
-    category = models.ForeignKey('Category', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now=True)
     date = models.DateTimeField(auto_now=True)
     view = models.IntegerField(default=0)
@@ -43,6 +42,24 @@ class About(models.Model):
 
 class Gallery(models.Model):
     img = models.ImageField(upload_to='gallery_img/')
+
+
+class Contact(models.Model):
+    phone_number = models.CharField(max_length=55)
+    email = models.EmailField()
+    address = models.CharField(max_length=255)
+
+class Order(models.Model):
+    full_name = models.CharField(max_length=155)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+    address = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.full_name
+
+
 
 
 
