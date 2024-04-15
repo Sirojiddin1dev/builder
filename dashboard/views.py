@@ -1,3 +1,15 @@
 from django.shortcuts import render
+from main.models import *
 
-# Create your views here.
+def blog_view(request):
+    context={
+        'blog': Blog.objects.all().order_by('-id')[:6]
+    }
+    return render(request,'blog.html' ,context)
+
+
+def blog_banner_view(request):
+    context = {
+        'img': Blog.objects.last()
+    }
+    return render(request,'blog.html', context)
