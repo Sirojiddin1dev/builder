@@ -1,18 +1,20 @@
 from django.db import models
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     title = models.CharField(max_length=55)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.CharField(max_length=55)
     image = models.ImageField(upload_to='products_img/')
     text = models.TextField()
-    PRODUCT = (
-        ('Fasad','Fasad'),
-        ('Sokol','Sokol'),
-        ('Forma','Forma')
-    )
-    category = models.CharField(max_length=55, choices=PRODUCT)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE)
     view = models.IntegerField(default=0)
 
     def __str__(self):

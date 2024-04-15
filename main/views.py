@@ -9,3 +9,13 @@ def index_view(request):
     }
     return render(request, 'index.html', context)
 
+
+def product_view(request):
+    categories = Category.objects.filter(is_active=True).order_by('-id')[:3]
+    category = request.GET.get('category')
+    context = {
+        'categories': categories,
+        'selected_category': category,
+        'product': Product.objects.all()
+    }
+    return render(request, 'shop.html', context)
