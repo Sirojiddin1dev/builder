@@ -2,7 +2,7 @@
 /* CSS INDEXING */
 :root {
   --primary-color: #121a25;
-  --secondary-color: #f51c1c;
+  --secondary-color: #ffc107;
   --secondary-color2: #4f5ac2;
   --yellow-color: #ffc107;
   --text-gray-color: #666666;
@@ -31,7 +31,7 @@
 }
 
 .color-scheme-1 {
-  --secondary-color: #f51c1c;
+  --secondary-color: #ffc107;
 }
 
 .color-scheme-2 {
@@ -1670,9 +1670,12 @@ hr {
 
 select {
   word-wrap: normal;
-  font-family: var(--font-lato);
+  font-family: Roboto, sans-serif;
+  border-radius: 5px;
+  background-color: orange;
+  color: #ffffff;
   font-size: var(--body-font-size);
-  font-weight: var(--body-font-weight);
+  font-weight: var(--body-font-weight) !important;
   line-height: var(--body-line-height);
 }
 
@@ -10300,7 +10303,6 @@ input.quickview__value--number {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background: var(--white-color);
   color: var(--secondary-color);
   border-radius: 50%;
 }

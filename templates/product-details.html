@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+    <main class="main__content_wrapper">
+
+        <!-- Start blog details section -->
+        <section class="blog__details--section section--padding">
+            <div class="container">
+            <ul class="breadcrumb__content--menu d-flex">
+                                <li class="breadcrumb__content--menu__items"><a class="text-black" href="https://goldklinker.uz/">{% blocktrans %}Главная страница{% endblocktrans %}</a></li>
+                                <li class="breadcrumb__content--menu__items"><span class="text-black">{% blocktrans %}Nнформация о Продукте{% endblocktrans %}</span></li>
+                            </ul><br><br>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog__details--wrapper">
+                            <div class="entry__blog">
+                                <div class="blog__post--header mb-30">
+                                    <div class="blog__thumbnail mb-30">
+                                    <img class="product__thumbnail--img border-radius-10" src="{{ product.image.url }}" alt="product-img">
+                                </div>
+                                    <h1 class="post__header--title mb-15">{{ product.title }}</h1>
+                                    
+                                    <h4 class="post__header--title mb-15">{{ product.price }} So'm </h4>
+                                    <p class="blog__post--meta">{{ product.view }} Просмотры</p>
+                                </div>
+
+                                
+                                <div class="blog__details--content">
+                                    <p class="blog__details--content__subtitle mb-25">{{ product.text }}.</p>
+                                </div>
+                                <div class="blog__tags--social__media d-flex align-items-center justify-content-between">
+                                <div class="blog__tags--media d-flex align-items-center">
+                                    <label class="blog__tags--media__title">{% blocktrans %}Категория:{% endblocktrans %}</label>
+                                    <ul class="d-flex">
+                                        <li class="blog__tags--media__list"><a class="blog__tags--media__link">{{ product.category }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <div class="related__post--area mb-50">
+                                <div class="section__heading text-center mb-20">
+                                    <h2 class="section__heading--maintitle h3">{% blocktrans %}Последний продукт{% endblocktrans %}</h2>
+                                </div>
+                                <div class="row row-cols-md-2 row-cols-sm-2 row-cols-1 mb--n28">
+                                    {% for i in products %}
+                                    <div class="col mb-28">
+                                        <div class="related__post--items">
+                                            <div class="related__post--thumbnail border-radius-10 mb-20">
+                                                <a class="display-block" href="{% url 'product_details_url' i.pk %}"><img class="related__post--img display-block border-radius-10" src="{{ i.image.url }}" alt="related-post"></a>
+                                            </div>
+                                            <div class="related__post--text">
+                                                <h3 class="related__post--title mb-5"><a class="related__post--title__link" href="{% url 'product_details_url' i.pk %}">{{ i.title }}</a></h3>
+                                                <span class="related__post--deta">{{ i.date }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End blog details section -->
+
+        <!-- Start Newsletter banner section -->
+
+        <!-- End Newsletter banner section -->
+    </main>
+{% endblock %}

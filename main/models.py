@@ -1,20 +1,18 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
-
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-    is_active = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.name
 
 class Product(models.Model):
     title = models.CharField(max_length=55)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    price = models.BigIntegerField()
     description = models.CharField(max_length=55)
     image = models.ImageField(upload_to='products_img/')
     text = models.TextField()
-    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    category = models.CharField(max_length=155, choices=[
+        ('Fasad', 'Fasad'),
+        ('Sokol', 'Sokol'),
+        ('Forma', 'Forma')
+    ])
     view = models.IntegerField(default=0)
 
     def __str__(self):
@@ -33,35 +31,34 @@ class Blog(models.Model):
         return self.title
 
 
-class About(models.Model):
-    title = models.CharField(max_length=255)
-    img = models.ImageField(upload_to='about_img/')
-    text = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-
 class Gallery(models.Model):
     img = models.ImageField(upload_to='gallery_img/')
 
 
-class Contact(models.Model):
-    phone_number = models.CharField(max_length=55)
+class Info(models.Model):
+    phone_number = models.CharField(max_length=20)
     email = models.EmailField()
     address = models.CharField(max_length=255)
+    tiktok = models.CharField(max_length=255)
+    youtube = models.CharField(max_length=255)
+    telegram = models.CharField(max_length=255)
+    instagram = models.CharField(max_length=255)
 
-class Order(models.Model):
-    full_name = models.CharField(max_length=155)
-    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+
+class Checkout(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
     address = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=13, validators=[
+        RegexValidator(
+            regex='^[\+]9{2}8{1}[0-9]{9}$',
+            message="Telefon raqamingizni to'g'ri ko'rsating.",
+            code="Telefon raqam xato"
+        )
+    ])
+    country = models.CharField(max_length=255)
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.full_name
-
-
-
-
-
+        return self.name

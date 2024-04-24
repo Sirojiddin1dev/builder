@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+        <div class="breadcrumb-area pt-60 pb-55 pt-sm-30 pb-sm-20">
+            <div class="container">
+                <div class="breadcrumb">
+                    <ul>
+                        <li class="breadcrumb__content--menu__items"><a class="text-white" href="https://goldklinker.uz/">{% blocktrans %}Главная страница{% endblocktrans %}</a></li>
+                        <li class="active"><a href="{% url 'checkout_url' product.pk %}">{% blocktrans %}Оплата{% endblocktrans %}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Breadcrumb End -->
+        <!-- checkout-area start -->
+        <div class="checkout-area pt-30  pb-60">
+            <div class="container">
+                <form action="{% url 'checkout_url' product.pk %}" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="checkbox-form">
+                                <h3>{% blocktrans %}адрес здания{% endblocktrans %}</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>{% blocktrans %}Имя{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="text" name="name" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>{% blocktrans %}Номер продукта{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="number" name="quantity" placeholder="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="country-select mb-30">
+                                            <label>{% blocktrans %}Страна{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="text" name="country" placeholder="" required/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list">
+                                            <label>{% blocktrans %}Адрес{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="text" name="address" placeholder="" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list mb-30">
+                                            <label>{% blocktrans %}Адрес электронной почты{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="email" name="email" placeholder="" required />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="checkout-form-list mb-30">
+                                            <label>{% blocktrans %}Номер телефона{% endblocktrans %}<span class="required">*</span></label>
+                                            <input type="text" name="phone_number" placeholder="" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="your-order">
+                                <h3>{% blocktrans %}Твоя очередь{% endblocktrans %}</h3>
+                                <div class="your-order-table table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name">{% blocktrans %}Продукт{% endblocktrans %}</th>
+                                                <th class="product-total">{% blocktrans %}Общий{% endblocktrans %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="cart_item">
+                                                <td class="product-name">
+                                                    {{ product.title }}
+                                                </td>
+                                                <td class="product-total">
+                                                    <span class="amount">{{ product.price }} So'm</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="order-total">
+                                                <th>{% blocktrans %}Общий{% endblocktrans %}</th>
+                                                <td><strong><span class="amount">{{ product.price }} So'm </span></strong>
+                                                </td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <div class="payment-method">
+                                    <div class="payment-accordion">
+                                        <div class="order-button-payment">
+                                            <input type="submit" value="{% blocktrans %}Разместить заказ{% endblocktrans %}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </form>   
+            </div>
+        </div>
+        <!-- checkout-area end -->
+{% endblock %}

@@ -1,30 +1,16 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
-    <main class="main__content_wrapper">
-        
-        <!-- Start breadcrumb section -->
-        <section class="breadcrumb__section breadcrumb__bg">
-            <div class="container">
-                <div class="row row-cols-1">
-                    <div class="col">
-                        <div class="breadcrumb__content">
-                            <h1 class="breadcrumb__content--title text-white mb-10">Blog Grid</h1>
-                            <ul class="breadcrumb__content--menu d-flex">
-                                <li class="breadcrumb__content--menu__items"><a class="text-white" href="{% url 'index_url' %}">Home</a></li>
-                                <li class="breadcrumb__content--menu__items"><span class="text-white">Blog</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End breadcrumb section -->
-
+    <main class="main__content_wrapper" xmlns="http://www.w3.org/1999/html">
         <!-- Start blog section -->
         <section class="blog__section section--padding">
             <div class="container">
+            <ul class="breadcrumb__content--menu d-flex">
+                                <li class="breadcrumb__content--menu__items"><a class="text-black" href="https://goldklinker.uz/">{% blocktrans %}Главная страница{% endblocktrans %}</a></li>
+                                <li class="breadcrumb__content--menu__items"><span class="text-black">{% blocktrans %}Блог{% endblocktrans %}</span></li>
+                            </ul><br><br>
                 <div class="section__heading text-center mb-40">
-                    <h2 class="section__heading--maintitle">Latest Post From Blog</h2>
+                    <h2 class="section__heading--maintitle">{% blocktrans %}Последнее сообщение из блога{% endblocktrans %}</h2>
                 </div>
                 <div class="blog__section--inner p-0">
                     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb--n30">
@@ -32,7 +18,7 @@
                         <div class="col mb-30">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="{{ i.img.url }}" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="{% url 'blog-details' i.id %}"><img class="blog__thumbnail--img display-block" src="{{ i.img.url }}" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -43,28 +29,38 @@
                                             {{ i.date }}
                                         </li>
                                     </ul>
-                                    <h3 class="blog__content--title h4"><a href="{% url 'blog-details' %}">{{ i.title }}</a></h3>
+                                    <h3 class="blog__content--title h4"><a href="{% url 'blog-details' i.id %}">{{ i.title }}</a></h3>
                                     <p class="blog__content--desc">{{ i.text }}</p>
-                                    <a class="blog__content--btn primary__btn" href="{% url 'blog-details' %}">Read more </a>
+                                    <a class="blog__content--btn primary__btn" href="{% url 'blog-details' i.id %}">{% blocktrans %}Читать далее{% endblocktrans %}</a>
                                 </div>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
                     <div class="pagination__area bg__gray--color">
-                        <nav class="pagination justify-content-center">
+                       <nav class="pagination justify-content-center">
                             <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
-                                <li class="pagination__list"><a href="blog.html" class="pagination__item--arrow  link ">
-                                    <svg xmlns="http://www.w3.org/2000/svg"  width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M244 400L100 256l144-144M120 256h292"/></svg></a>
-                                <li>
-                                <li class="pagination__list"><span class="pagination__item pagination__item--current">1</span></li>
-                                <li class="pagination__list"><a href="blog.html" class="pagination__item link">2</a></li>
-                                <li class="pagination__list"><a href="blog.html" class="pagination__item link">3</a></li>
-                                <li class="pagination__list"><a href="blog.html" class="pagination__item link">4</a></li>
-                                <li class="pagination__list"><a href="blog.html" class="pagination__item--arrow  link ">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="22.51" height="20.443" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg></a>
-                                <li>
-                            </ul>
+
+                                <!-- Oldingi sahifa -->
+                        {% if page_obj.has_previous %}
+                        <li style="margin-right: 10px"><a href="?page={{ page_obj.previous_page_number }}" style="font-size: 27px">&lt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-right: 10px"><span style="font-size: 27px">&lt;</span></li>
+                        {% endif %}
+                        <!-- Sahifa raqamlari -->
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="active" style="font-size: 20px; background-color: yellow; width: 40px; height: 40px; display:flex; border-radius:50%; justify-content: center; align-items: center"><span style="margin:10px; margin-right:auto; margin-left: auto;">{{ num }}</span></li><div style="width: 10px"></div>
+                        {% else %}
+                        <li><a href="?page={{ num }}" style="font-size: 20px">{{ num }}</a></li><div style="width: 10px"></div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- Keyingi sahifa -->
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" style="font-size: 27px">&gt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-left: 1px"><span style="font-size: 27px">&gt;</span></li>
+                        {% endif %}</ul>
                         </nav>
                     </div>
                 </div>

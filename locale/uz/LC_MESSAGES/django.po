@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 22:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\home\settings.py:120
+msgid "Uzbek"
+msgstr ""
+
+#: .\home\settings.py:121
+msgid "English"
+msgstr ""
+
+#: .\home\settings.py:122
+msgid "Russian"
+msgstr ""
+
+#: .\templates\base.html:8
+msgid ""
+"Вентилируемые фасады Каньон. Фасадные системы «GoldKlinker» - фиброцементные "
+"панели для наружной отделки дома"
+msgstr ""
+"Kanon chechaklarini sirkulyatsiyalash. 'GoldKlinker' fasad tizimlari - uy "
+"tashqarisini qoplash uchun fibrotsement paneli"
+
+#: .\templates\blog-details.html:13 .\templates\blog-details.html:16
+msgid "Подробности блога"
+msgstr "Blog tafsilotlari"
+
+#: .\templates\blog-details.html:15 .\templates\blog.html:14
+#: .\templates\checkout.html:8 .\templates\portfolio.html:14
+#: .\templates\product-details.html:15 .\templates\shop.html:11
+msgid "Главная страница"
+msgstr "Bosh sahifa"
+
+#: .\templates\blog.html:12
+msgid "Сетка блога"
+msgstr "Bloglar tarmog'i"
+
+#: .\templates\blog.html:15
+msgid "Блог"
+msgstr "Blog"
+
+#: .\templates\blog.html:28
+msgid "Последнее сообщение из блога"
+msgstr "Eng so'nggi blog posti"
+
+#: .\templates\blog.html:49
+msgid "Читать далее"
+msgstr "Eng so'nggi blog posti"
+
+#: .\templates\checkout.html:9
+msgid "Оплата"
+msgstr "To'lov"
+
+#: .\templates\checkout.html:24
+msgid "адрес здания"
+msgstr "bino manzili"
+
+#: .\templates\checkout.html:28
+msgid "Имя"
+msgstr "Ism"
+
+#: .\templates\checkout.html:34
+msgid "Номер продукта"
+msgstr "Mahsulot soni"
+
+#: .\templates\checkout.html:40
+msgid "Страна"
+msgstr "Bir mamlakat"
+
+#: .\templates\checkout.html:47
+msgid "Адрес"
+msgstr "Manzil"
+
+#: .\templates\checkout.html:53
+msgid "Адрес электронной почты"
+msgstr "E-mail manzili"
+
+#: .\templates\checkout.html:59
+msgid "Номер телефона"
+msgstr "Telefon raqami"
+
+#: .\templates\checkout.html:68
+msgid "Твоя очередь"
+msgstr "Sening navbating"
+
+#: .\templates\checkout.html:73
+msgid "Продукт"
+msgstr "Mahsulot"
+
+#: .\templates\checkout.html:74 .\templates\checkout.html:89
+msgid "Общий"
+msgstr "Hammasi"
+
+#: .\templates\checkout.html:99
+msgid "Разместить заказ"
+msgstr "Buyurtma bering"
+
+#: .\templates\portfolio.html:12 .\templates\portfolio.html:15
+msgid "Фото"
+msgstr "Surat"
+
+#: .\templates\portfolio.html:28
+msgid "Посмотрите наше портфолио"
+msgstr "Bizning portfelimizni ko'ring"
+
+#: .\templates\portfolio.html:36
+msgid "портфолио-img"
+msgstr "portfolio-img"
+
+#: .\templates\product-details.html:13 .\templates\product-details.html:16
+#: .\templates\shop.html:9 .\templates\shop.html:12
+msgid "Nнформация о Продукте"
+msgstr "Mahsulot haqida ma'lumot"
+
+#: .\templates\product-details.html:46
+msgid "Категория:"
+msgstr "Turkum:"
+
+#: .\templates\product-details.html:56
+msgid "Последний продукт"
+msgstr "Eng so'nggi mahsulot"
+
+#: .\templates\shop.html:24
+msgid "Наши продукты"
+msgstr "Bizning mahsulotlarimiz"
+
+#: .\templates\shop.html:27
+msgid "Все"
+msgstr "Hammasi"
+
+#: .\templates\shop.html:28
+msgid "Фасад"
+msgstr "Fasad"
+
+#: .\templates\shop.html:29
+msgid "Сокол"
+msgstr "Sokol"
+
+#: .\templates\shop.html:30
+msgid "Форма"
+msgstr "Forma"
+
+#: .\templates\shop.html:51
+msgid "Добавить в корзину"
+msgstr "Savatga qo'shish"
+
+#~ msgid "Mahsulot"
+#~ msgstr "Mahsulot"

@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-22 22:08+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\home\settings.py:120
+msgid "Uzbek"
+msgstr ""
+
+#: .\home\settings.py:121
+msgid "English"
+msgstr ""
+
+#: .\home\settings.py:122
+msgid "Russian"
+msgstr ""
+
+#: .\templates\base.html:8
+msgid ""
+"Вентилируемые фасады Каньон. Фасадные системы «GoldKlinker» - фиброцементные "
+"панели для наружной отделки дома"
+msgstr ""
+"Ventilated facades Canyon. Facade systems 'GoldKlinker' - fiber cement "
+"panels for exterior decoration of houses"
+
+#: .\templates\blog-details.html:13 .\templates\blog-details.html:16
+msgid "Подробности блога"
+msgstr "Blog details"
+
+#: .\templates\blog-details.html:15 .\templates\blog.html:14
+#: .\templates\checkout.html:8 .\templates\portfolio.html:14
+#: .\templates\product-details.html:15 .\templates\shop.html:11
+msgid "Главная страница"
+msgstr "Home page"
+
+#: .\templates\blog.html:12
+msgid "Сетка блога"
+msgstr "Blog grid"
+
+#: .\templates\blog.html:15
+msgid "Блог"
+msgstr "Blog"
+
+#: .\templates\blog.html:28
+msgid "Последнее сообщение из блога"
+msgstr "Latest blog post"
+
+#: .\templates\blog.html:49
+msgid "Читать далее"
+msgstr "Read more"
+
+#: .\templates\checkout.html:9
+msgid "Оплата"
+msgstr "Payment"
+
+#: .\templates\checkout.html:24
+msgid "адрес здания"
+msgstr "building address"
+
+#: .\templates\checkout.html:28
+msgid "Имя"
+msgstr "Name"
+
+#: .\templates\checkout.html:34
+msgid "Номер продукта"
+msgstr "Product quantity"
+
+#: .\templates\checkout.html:40
+msgid "Страна"
+msgstr "A country"
+
+#: .\templates\checkout.html:47
+msgid "Адрес"
+msgstr "Address"
+
+#: .\templates\checkout.html:53
+msgid "Адрес электронной почты"
+msgstr "E-mail address"
+
+#: .\templates\checkout.html:59
+msgid "Номер телефона"
+msgstr "Phone number"
+
+#: .\templates\checkout.html:68
+msgid "Твоя очередь"
+msgstr "Your turn"
+
+#: .\templates\checkout.html:73
+msgid "Продукт"
+msgstr "Product"
+
+#: .\templates\checkout.html:74 .\templates\checkout.html:89
+msgid "Общий"
+msgstr "General"
+
+#: .\templates\checkout.html:99
+msgid "Разместить заказ"
+msgstr "Place an order"
+
+#: .\templates\portfolio.html:12 .\templates\portfolio.html:15
+msgid "Фото"
+msgstr "Photo"
+
+#: .\templates\portfolio.html:28
+msgid "Посмотрите наше портфолио"
+msgstr "View our portfolio"
+
+#: .\templates\portfolio.html:36
+msgid "портфолио-img"
+msgstr "portfolio-img"
+
+#: .\templates\product-details.html:13 .\templates\product-details.html:16
+#: .\templates\shop.html:9 .\templates\shop.html:12
+msgid "Nнформация о Продукте"
+msgstr "Product Information"
+
+#: .\templates\product-details.html:46
+msgid "Категория:"
+msgstr "Category:"
+
+#: .\templates\product-details.html:56
+msgid "Последний продукт"
+msgstr "Latest product"
+
+#: .\templates\shop.html:24
+msgid "Наши продукты"
+msgstr "Our products"
+
+#: .\templates\shop.html:27
+msgid "Все"
+msgstr "All"
+
+#: .\templates\shop.html:28
+msgid "Фасад"
+msgstr "Fasad"
+
+#: .\templates\shop.html:29
+msgid "Сокол"
+msgstr "Cokol"
+
+#: .\templates\shop.html:30
+msgid "Форма"
+msgstr "Forma"
+
+#: .\templates\shop.html:51
+msgid "Добавить в корзину"
+msgstr "Add to Basket"
