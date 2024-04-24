@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 22:08+0500\n"
+"POT-Creation-Date: 2024-04-24 15:28+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,29 +38,21 @@ msgstr ""
 "Ventilated facades Canyon. Facade systems 'GoldKlinker' - fiber cement "
 "panels for exterior decoration of houses"
 
-#: .\templates\blog-details.html:13 .\templates\blog-details.html:16
-msgid "Подробности блога"
-msgstr "Blog details"
-
-#: .\templates\blog-details.html:15 .\templates\blog.html:14
-#: .\templates\checkout.html:8 .\templates\portfolio.html:14
-#: .\templates\product-details.html:15 .\templates\shop.html:11
+#: .\templates\blog-details.html:11 .\templates\blog.html:9
+#: .\templates\checkout.html:8 .\templates\portfolio.html:10
+#: .\templates\product-details.html:11 .\templates\shop.html:10
 msgid "Главная страница"
 msgstr "Home page"
 
-#: .\templates\blog.html:12
-msgid "Сетка блога"
-msgstr "Blog grid"
-
-#: .\templates\blog.html:15
+#: .\templates\blog-details.html:12 .\templates\blog.html:10
 msgid "Блог"
 msgstr "Blog"
 
-#: .\templates\blog.html:28
+#: .\templates\blog.html:13
 msgid "Последнее сообщение из блога"
 msgstr "Latest blog post"
 
-#: .\templates\blog.html:49
+#: .\templates\blog.html:34
 msgid "Читать далее"
 msgstr "Read more"
 
@@ -112,51 +104,50 @@ msgstr "General"
 msgid "Разместить заказ"
 msgstr "Place an order"
 
-#: .\templates\portfolio.html:12 .\templates\portfolio.html:15
+#: .\templates\portfolio.html:11
 msgid "Фото"
 msgstr "Photo"
 
-#: .\templates\portfolio.html:28
+#: .\templates\portfolio.html:14
 msgid "Посмотрите наше портфолио"
 msgstr "View our portfolio"
 
-#: .\templates\portfolio.html:36
+#: .\templates\portfolio.html:22
 msgid "портфолио-img"
 msgstr "portfolio-img"
 
-#: .\templates\product-details.html:13 .\templates\product-details.html:16
-#: .\templates\shop.html:9 .\templates\shop.html:12
+#: .\templates\product-details.html:12
 msgid "Nнформация о Продукте"
 msgstr "Product Information"
 
-#: .\templates\product-details.html:46
+#: .\templates\product-details.html:34
 msgid "Категория:"
 msgstr "Category:"
 
-#: .\templates\product-details.html:56
+#: .\templates\product-details.html:44
 msgid "Последний продукт"
 msgstr "Latest product"
 
-#: .\templates\shop.html:24
+#: .\templates\shop.html:11 .\templates\shop.html:14
 msgid "Наши продукты"
 msgstr "Our products"
 
-#: .\templates\shop.html:27
+#: .\templates\shop.html:17
 msgid "Все"
 msgstr "All"
 
-#: .\templates\shop.html:28
+#: .\templates\shop.html:18
 msgid "Фасад"
 msgstr "Fasad"
 
-#: .\templates\shop.html:29
+#: .\templates\shop.html:19
 msgid "Сокол"
 msgstr "Cokol"
 
-#: .\templates\shop.html:30
+#: .\templates\shop.html:20
 msgid "Форма"
 msgstr "Forma"
 
-#: .\templates\shop.html:51
-msgid "Добавить в корзину"
-msgstr "Add to Basket"
+#: .\templates\shop.html:41
+msgid "заказ"
+msgstr "order"

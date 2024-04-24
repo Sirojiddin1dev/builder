@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-22 22:08+0500\n"
+"POT-Creation-Date: 2024-04-24 15:28+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,29 +38,21 @@ msgstr ""
 "Kanon chechaklarini sirkulyatsiyalash. 'GoldKlinker' fasad tizimlari - uy "
 "tashqarisini qoplash uchun fibrotsement paneli"
 
-#: .\templates\blog-details.html:13 .\templates\blog-details.html:16
-msgid "Подробности блога"
-msgstr "Blog tafsilotlari"
-
-#: .\templates\blog-details.html:15 .\templates\blog.html:14
-#: .\templates\checkout.html:8 .\templates\portfolio.html:14
-#: .\templates\product-details.html:15 .\templates\shop.html:11
+#: .\templates\blog-details.html:11 .\templates\blog.html:9
+#: .\templates\checkout.html:8 .\templates\portfolio.html:10
+#: .\templates\product-details.html:11 .\templates\shop.html:10
 msgid "Главная страница"
 msgstr "Bosh sahifa"
 
-#: .\templates\blog.html:12
-msgid "Сетка блога"
-msgstr "Bloglar tarmog'i"
-
-#: .\templates\blog.html:15
+#: .\templates\blog-details.html:12 .\templates\blog.html:10
 msgid "Блог"
 msgstr "Blog"
 
-#: .\templates\blog.html:28
+#: .\templates\blog.html:13
 msgid "Последнее сообщение из блога"
 msgstr "Eng so'nggi blog posti"
 
-#: .\templates\blog.html:49
+#: .\templates\blog.html:34
 msgid "Читать далее"
 msgstr "Eng so'nggi blog posti"
 
@@ -112,54 +104,51 @@ msgstr "Hammasi"
 msgid "Разместить заказ"
 msgstr "Buyurtma bering"
 
-#: .\templates\portfolio.html:12 .\templates\portfolio.html:15
+#: .\templates\portfolio.html:11
 msgid "Фото"
 msgstr "Surat"
 
-#: .\templates\portfolio.html:28
+#: .\templates\portfolio.html:14
 msgid "Посмотрите наше портфолио"
 msgstr "Bizning portfelimizni ko'ring"
 
-#: .\templates\portfolio.html:36
+#: .\templates\portfolio.html:22
 msgid "портфолио-img"
 msgstr "portfolio-img"
 
-#: .\templates\product-details.html:13 .\templates\product-details.html:16
-#: .\templates\shop.html:9 .\templates\shop.html:12
+#: .\templates\product-details.html:12
 msgid "Nнформация о Продукте"
 msgstr "Mahsulot haqida ma'lumot"
 
-#: .\templates\product-details.html:46
+#: .\templates\product-details.html:34
 msgid "Категория:"
 msgstr "Turkum:"
 
-#: .\templates\product-details.html:56
+#: .\templates\product-details.html:44
 msgid "Последний продукт"
 msgstr "Eng so'nggi mahsulot"
 
-#: .\templates\shop.html:24
+#: .\templates\shop.html:11 .\templates\shop.html:14
 msgid "Наши продукты"
 msgstr "Bizning mahsulotlarimiz"
 
-#: .\templates\shop.html:27
+#: .\templates\shop.html:17
 msgid "Все"
 msgstr "Hammasi"
 
-#: .\templates\shop.html:28
+#: .\templates\shop.html:18
 msgid "Фасад"
 msgstr "Fasad"
 
-#: .\templates\shop.html:29
+#: .\templates\shop.html:19
 msgid "Сокол"
 msgstr "Sokol"
 
-#: .\templates\shop.html:30
+#: .\templates\shop.html:20
 msgid "Форма"
 msgstr "Forma"
 
-#: .\templates\shop.html:51
-msgid "Добавить в корзину"
-msgstr "Savatga qo'shish"
+#: .\templates\shop.html:41
+msgid "заказ"
+msgstr "buyurtma"
 
-#~ msgid "Mahsulot"
-#~ msgstr "Mahsulot"
