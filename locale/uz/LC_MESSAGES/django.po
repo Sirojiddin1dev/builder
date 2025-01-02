@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-24 15:28+0500\n"
+"POT-Creation-Date: 2024-04-29 15:51+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,17 +30,18 @@ msgstr ""
 msgid "Russian"
 msgstr ""
 
-#: .\templates\base.html:8
+#: .\templates\base.html:8 .\templates\shop-four-columns.html:14
 msgid ""
-"Вентилируемые фасады Каньон. Фасадные системы «GoldKlinker» - фиброцементные "
-"панели для наружной отделки дома"
+"Вентилируемые фасады GoldKlinker. Фасадные системы «GoldKlinker» - "
+"фиброцементные панели для наружной отделки дома"
 msgstr ""
-"Kanon chechaklarini sirkulyatsiyalash. 'GoldKlinker' fasad tizimlari - uy "
+"GoldKlinker chechaklarini sirkulyatsiyalash. 'GoldKlinker' fasad tizimlari - uy "
 "tashqarisini qoplash uchun fibrotsement paneli"
 
 #: .\templates\blog-details.html:11 .\templates\blog.html:9
 #: .\templates\checkout.html:8 .\templates\portfolio.html:10
-#: .\templates\product-details.html:11 .\templates\shop.html:10
+#: .\templates\product-details.html:11 .\templates\shop-four-columns.html:91
+#: .\templates\shop.html:10
 msgid "Главная страница"
 msgstr "Bosh sahifa"
 
@@ -88,19 +89,7 @@ msgstr "E-mail manzili"
 msgid "Номер телефона"
 msgstr "Telefon raqami"
 
-#: .\templates\checkout.html:68
-msgid "Твоя очередь"
-msgstr "Sening navbating"
-
-#: .\templates\checkout.html:73
-msgid "Продукт"
-msgstr "Mahsulot"
-
-#: .\templates\checkout.html:74 .\templates\checkout.html:89
-msgid "Общий"
-msgstr "Hammasi"
-
-#: .\templates\checkout.html:99
+#: .\templates\checkout.html:71
 msgid "Разместить заказ"
 msgstr "Buyurtma bering"
 
@@ -112,8 +101,8 @@ msgstr "Surat"
 msgid "Посмотрите наше портфолио"
 msgstr "Bizning portfelimizni ko'ring"
 
-#: .\templates\portfolio.html:22
-msgid "портфолио-img"
+#: .\templates\portfolio.html:22 .\templates\shop.html:30
+msgid " портфолио-img "
 msgstr "portfolio-img"
 
 #: .\templates\product-details.html:12
@@ -128,27 +117,31 @@ msgstr "Turkum:"
 msgid "Последний продукт"
 msgstr "Eng so'nggi mahsulot"
 
+#: .\templates\shop-four-columns.html:92 .\templates\shop-four-columns.html:95
 #: .\templates\shop.html:11 .\templates\shop.html:14
 msgid "Наши продукты"
 msgstr "Bizning mahsulotlarimiz"
 
-#: .\templates\shop.html:17
+#: .\templates\shop-four-columns.html:98 .\templates\shop.html:17
 msgid "Все"
 msgstr "Hammasi"
 
-#: .\templates\shop.html:18
+#: .\templates\shop-four-columns.html:99 .\templates\shop.html:18
 msgid "Фасад"
 msgstr "Fasad"
 
-#: .\templates\shop.html:19
+#: .\templates\shop-four-columns.html:100 .\templates\shop.html:19
 msgid "Сокол"
 msgstr "Sokol"
 
-#: .\templates\shop.html:20
+#: .\templates\shop-four-columns.html:101 .\templates\shop.html:20
 msgid "Форма"
 msgstr "Forma"
 
-#: .\templates\shop.html:41
+#: .\templates\shop-four-columns.html:108
+msgid "Продукт найден из"
+msgstr "Mahsulot topildi"
+
+#: .\templates\shop-four-columns.html:202 .\templates\shop.html:45
 msgid "заказ"
 msgstr "buyurtma"
-

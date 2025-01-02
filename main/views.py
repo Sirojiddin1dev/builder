@@ -8,20 +8,22 @@ def portfolio_view(request):
     context = {
         'photo': Gallery.objects.all().order_by('-id')[:32]
     }
-    return render(request, 'portfolio.html', context)
+    return render(request, 'portfolio.html', context=context)
 
 
 def product_fasad_view(request):
     try:
         products = Product.objects.filter(category="Fasad")
-        paginator = Paginator(products, 20)
+        paginator = Paginator(products, 8)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
+        count = products.all().count()
         context = {
             'product': page_obj,
-            'page_obj': page_obj
+            'page_obj': page_obj,
+            'count': count
         }
-        return render(request, 'shop.html', context)
+        return render(request, 'shop-four-columns.html', context)
     except Exception as e:
         print(e)
 
@@ -29,14 +31,16 @@ def product_fasad_view(request):
 def product_sokol_view(request):
     try:
         products = Product.objects.filter(category="Sokol")
-        paginator = Paginator(products, 20)
+        paginator = Paginator(products, 8)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
+        count = products.all().count()
         context = {
             'product': page_obj,
-            'page_obj': page_obj
+            'page_obj': page_obj,
+            'count': count
         }
-        return render(request, 'shop.html', context)
+        return render(request, 'shop-four-columns.html', context)
     except Exception as e:
         print(e)
 
@@ -44,29 +48,32 @@ def product_sokol_view(request):
 def product_forma_view(request):
     try:
         products = Product.objects.filter(category="Forma")
-        paginator = Paginator(products, 20)
+        paginator = Paginator(products, 8)
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
+        count = products.all().count()
         context = {
             'product': page_obj,
-            'page_obj': page_obj
+            'page_obj': page_obj,
+            'count': count
         }
-        return render(request, 'shop.html', context)
+        return render(request, 'shop-four-columns.html', context)
     except Exception as e:
         print(e)
 
 
 def product_view(request):
     products = Product.objects.all()
-    paginator = Paginator(products, 20)
+    paginator = Paginator(products, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    count = products.all().count()
     context = {
-        'product':page_obj,
-        'page_obj': page_obj
+        'product': page_obj,
+        'page_obj': page_obj,
+        'count': count
     }
-    return render(request, 'shop.html', context)
-
+    return render(request, 'shop-four-columns.html', context)
 
 
 def blog_view(request):
@@ -74,8 +81,6 @@ def blog_view(request):
         blog = Blog.objects.all()
         paginator = Paginator(blog, 6)
         page_number = request.GET.get('page')
-        print(page_number)
-        print(paginator)
         page_obj = paginator.get_page(page_number)
         context = {
             'blog': page_obj,

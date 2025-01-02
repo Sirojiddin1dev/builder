@@ -1,0 +1,279 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shome - Shoes eCommerce Website Template"/>
+    <meta name="keywords" content="footwear, shoes, modern, shop, store, ecommerce, responsive, e-commerce"/>
+    <meta name="author" content="codecarnival"/>
+
+    <title>{% blocktrans %}Вентилируемые фасады GoldKlinker. Фасадные системы «GoldKlinker» - фиброцементные панели для наружной отделки дома{% endblocktrans %}</title>
+
+    <!--== Favicon ==-->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+
+    <!--== Google Fonts ==-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!--== Bootstrap CSS ==-->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <!--== Font Awesome Min Icon CSS ==-->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!--== Pe7 Stroke Icon CSS ==-->
+    <link href="{% static 'assets/css/pe-icon-7-stroke.css' %}" rel="stylesheet" />
+    <!--== Swiper CSS ==-->
+    <link href="{% static 'assets/css/swiper.min.css' %}" rel="stylesheet" />
+    <!--== Fancybox Min CSS ==-->
+    <link href="{% static 'assets/css/fancybox.min.css' %}" rel="stylesheet" />
+    <!--== Aos Min CSS ==-->
+    <link href="{% static 'assets/css/aos.min.css' %}" rel="stylesheet" />
+
+    <!--== Main Style CSS ==-->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!--wrapper start-->
+<div class="wrapper">
+      <!-- Start header area -->
+    <header class="header__section header__transparent">
+        <!-- Start Header topbar -->
+        <div class="header__topbar bg__primary">
+            <div class="container-fluid">
+                <div class="header__topbar--inner d-flex align-items-center justify-content-between">
+                    <div class="header__shipping">
+                        <a href="tel:+998905452275"><p class="header__shipping--text text-white" style="padding-right:60px;">+998905452275</p></a>
+                        <a href="tel:+998994322275"><p class="header__shipping--text text-white" style="padding-right:30px;">+998994322275</p></a>
+                    </div>
+                        <ul> 
+                            <form class="language" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select name="language" onchange="this.form.submit()">
+                                    {% get_current_language as LANGUAGE_CODE %}
+                                    {% get_available_languages as LANGUAGES %}
+                                    {% get_language_info_list for LANGUAGES as languages %}
+                                    {% for language in languages %}
+                                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                            {{ language.name_local }} ({{ language.code }})
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+
+    </header>
+  <main class="main-content">
+    
+
+    <!--== Start Product Area Wrapper ==-->
+    <section class="product-area product-default-area">
+        <div class="container-fluid"><br><br>
+            <ul class="breadcrumb__content--menu d-flex">
+                                <li class="breadcrumb__content--menu__items"><a class="text-black" href="https://goldklinker.uz/">{% blocktrans %}Главная страница{% endblocktrans %}</a></li>
+                                <li class="breadcrumb__content--menu__items"><span class="text-black">{% blocktrans %}Наши продукты{% endblocktrans %}</span></li>
+                            </ul>
+                <div class="section__heading text-center mb-30">
+                    <h2 class="section__heading--maintitle" style="padding-top:100px;">{% blocktrans %}Наши продукты{% endblocktrans %}</h2>
+                </div>
+                <ul class="product__tab--btn d-flex justify-content-center mb-50">
+                    <li class="product__tab--btn__list" data-toggle="tab"><a href="{% url 'product_url' %}" >{% blocktrans %}Все{% endblocktrans %}</a></li>
+                    <li class="product__tab--btn__list" data-toggle="tab"><a href="{% url 'fasad_product_url' %}" >{% blocktrans %}Фасад{% endblocktrans %}</a></li>
+                    <li class="product__tab--btn__list" data-toggle="tab"><a href="{% url 'sokol_product_url' %}" >{% blocktrans %}Сокол{% endblocktrans %}</a></li>
+                    <li class="product__tab--btn__list" data-toggle="tab"><a href="{% url 'forma_product_url' %}" >{% blocktrans %}Форма{% endblocktrans %}</a></li>
+                </ul>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="shop-top-bar">
+              <div class="shop-top-left">
+                <p class="pagination-line"><a href="{% url 'product_url' %}">8</a> {% blocktrans %}Продукт найден из{% endblocktrans %} <a href="{% url 'product_url' %}">{{ count }}</a></p>
+              </div>
+              <div class="shop-top-center">
+                <nav class="product-nav">
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-list-tab" data-bs-toggle="tab" data-bs-target="#nav-list" type="button" role="tab" aria-controls="nav-list" aria-selected="false"><i class="fa fa-list"></i></button>
+                    <button class="nav-link" id="nav-grid-tab" data-bs-toggle="tab" data-bs-target="#nav-grid" type="button" role="tab" aria-controls="nav-grid" aria-selected="true"><i class="fa fa-th"></i></button>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade" id="nav-grid" role="tabpanel" aria-labelledby="nav-grid-tab">
+                <div class="row">
+                {% for i in product %}
+                  <div class="col-sm-6 col-xl-3">
+                    <!--== Start Product Item ==-->
+                    <div class="product-item">
+                      <div class="inner-content">
+                        <div class="product-thumb">
+                          <a href="{{ i.image.url }}">
+                            <img src="{{ i.image.url }}" width="270" height="274" alt="Image-HasTech">
+                          </a>
+                          <div class="product-action">
+                    <a class="btn-product-cart" href="{% url 'checkout_url' i.pk %}"><i class="fa fa-shopping-cart"></i></a>
+                  </div>
+                          <a class="banner-link-overlay" href="{% url 'checkout_url' i.pk %}"></a>
+                        </div>
+                        <div class="product-info">
+                          <h4 class="title"><a href="{% url 'checkout_url' i.pk %}">{{ i.title }}</a></h4>
+                          <h3 class="title"><a href="{% url 'checkout_url' i.pk %}">{{ i.description }}</a></h3>
+                          <div class="prices">
+                            <span class="price">{{ i.price }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--== End prPduct Item ==-->
+                  </div>
+                {% endfor %}
+                  
+                  <div class="col-12">
+                    <div class="pagination__area bg__gray--color">
+                        <nav class="pagination justify-content-center">
+                            <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
+                                <!-- Oldingi sahifa -->
+                        {% if page_obj.has_previous %}
+                        <li style="margin-right: 10px"><a href="?page={{ page_obj.previous_page_number }}" style="font-size: 27px">&lt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-right: 10px"><span style="font-size: 27px">&lt;</span></li>
+                        {% endif %}
+                        <!-- Sahifa raqamlari -->
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="active" style="font-size: 20px; background-color: yellow; width: 40px; height: 40px; display:flex; border-radius:50%; justify-content: center; align-items: center"><span style="margin:10px; margin-right:auto; margin-left: auto;">{{ num }}</span></li><div style="width: 10px"></div>
+                        {% else %}
+                        <li><a href="?page={{ num }}" style="font-size: 20px">{{ num }}</a></li><div style="width: 10px"></div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- Keyingi sahifa -->
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" style="font-size: 27px">&gt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-left: 1px"><span style="font-size: 27px">&gt;</span></li>
+                        {% endif %}</ul>
+                        </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade show active" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
+                <div class="row">
+                {% for i in product %}
+                  <div class="col-md-12">
+                    <!--== Start Product Item ==-->
+                    <div class="product-item product-list-item">
+                      <div class="inner-content">
+                        <div class="product-thumb">
+                          <a href="{{ i.image.url }}">
+                            <img src="{{ i.image.url }}" width="322" height="360" alt="Image-HasTech">
+                          </a>
+                          <div class="product-action">
+                    <a class="btn-product-cart" href="{% url 'checkout_url' i.pk %}"><i class="fa fa-shopping-cart"></i></a>
+                  </div>
+                          <a class="banner-link-overlay" href="{% url 'checkout_url' i.pk %}"></a>
+                        </div>
+                        <div class="product-info">
+                          <h4 class="title"><a href="{% url 'checkout_url' i.pk %}">{{ i.title }}</a></h4>
+                          <div class="prices">
+                            <span class="price">{{ i.price }}</span>
+                          </div>
+                          <p>{{ i.description }}</p>
+                          <a class="btn-theme btn-sm" href="{% url 'checkout_url' i.pk %}">{% blocktrans %}заказ{% endblocktrans %}</a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--== End prPduct Item ==-->
+                  </div>
+                {% endfor %}
+                  <div class="col-12">
+                                                <div class="pagination__area bg__gray--color">
+                        <nav class="pagination justify-content-center">
+                            <ul class="pagination__wrapper d-flex align-items-center justify-content-center">
+                                <!-- Oldingi sahifa -->
+                        {% if page_obj.has_previous %}
+                        <li style="margin-right: 10px"><a href="?page={{ page_obj.previous_page_number }}" style="font-size: 27px">&lt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-right: 10px"><span style="font-size: 27px">&lt;</span></li>
+                        {% endif %}
+                        <!-- Sahifa raqamlari -->
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                        <li class="active" style="font-size: 20px; background-color: yellow; width: 40px; height: 40px; display:flex; border-radius:50%; justify-content: center; align-items: center"><span style="margin:10px; margin-right:auto; margin-left: auto;">{{ num }}</span></li><div style="width: 10px"></div>
+                        {% else %}
+                        <li><a href="?page={{ num }}" style="font-size: 20px">{{ num }}</a></li><div style="width: 10px"></div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- Keyingi sahifa -->
+                        {% if page_obj.has_next %}
+                        <li><a href="?page={{ page_obj.next_page_number }}" style="font-size: 27px">&gt;</a></li>
+                        {% else %}
+                        <li class="disabled" style="margin-left: 1px"><span style="font-size: 27px">&gt;</span></li>
+                        {% endif %}</ul>
+                        </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Product Area Wrapper ==-->
+  </main>
+
+
+</div>
+
+<!--=======================Javascript============================-->
+
+<!--=== jQuery Modernizr Min Js ===-->
+<script src="{% static 'assets/js/modernizr.js' %}"></script>
+<!--=== jQuery Min Js ===-->
+<script src="{% static 'assets/js/jquery-main.js' %}"></script>
+<!--=== jQuery Migration Min Js ===-->
+<script src="{% static 'assets/js/jquery-migrate.js' %}"></script>
+<!--=== jQuery Popper Min Js ===-->
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<!--=== jQuery Bootstrap Min Js ===-->
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<!--=== jQuery Ui Min Js ===-->
+<script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+<!--=== jQuery Swiper Min Js ===-->
+<script src="{% static 'assets/js/swiper.min.js' %}"></script>
+<!--=== jQuery Fancybox Min Js ===-->
+<script src="{% static 'assets/js/fancybox.min.js' %}"></script>
+<!--=== jQuery Waypoint Js ===-->
+<script src="{% static 'assets/js/waypoint.js' %}"></script>
+<!--=== jQuery Parallax Min Js ===-->
+<script src="{% static 'assets/js/parallax.min.js' %}"></script>
+<!--=== jQuery Aos Min Js ===-->
+<script src="{% static 'assets/js/aos.min.js' %}"></script>
+
+<!--=== jQuery Custom Js ===-->
+<script src="{% static 'assets/js/custom.js' %}"></script>
+
+</body>
+
+</html>

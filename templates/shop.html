@@ -27,10 +27,14 @@
                                 <div class="col mb-30">
                                     <div class="product__items ">
                                         <div class="product__items--thumbnail">
-                                            <a class="product__items--link" href="{% url 'product_details_url' i.pk %}">
-                                                <img class="product__items--img product__primary--img" src="{{ i.image.url }}" alt="product-img">
+                                            <a class="portfolio__items--thumbnail__link glightbox" href="{{ i.img.url }}" data-gallery="portfolio"><img class="portfolio__items--thumbnail__img" src="{{ i.img.url }}" alt="{% blocktrans %} портфолио-img {% endblocktrans %}">
+                                                <span class="portfolio__view--icon" ><svg xmlns="http://www.w3.org/2000/svg" width="39.697" height="27.066" viewBox="0 0 39.697 27.066">
+                                                    <path  d="M20.849,4.5A21.341,21.341,0,0,0,1,18.033a21.322,21.322,0,0,0,39.7,0A21.341,21.341,0,0,0,20.849,4.5Zm0,22.555a9.022,9.022,0,1,1,9.022-9.022A9.025,9.025,0,0,1,20.849,27.055Zm0-14.435a5.413,5.413,0,1,0,5.413,5.413A5.406,5.406,0,0,0,20.849,12.62Z" transform="translate(-1 -4.5)" fill="currentColor"/>
+                                                    </svg>
+                                                </span>
                                             </a>
-                                            <h3 class="product__items--content__title h4"><a href="{% url 'product_details_url' i.pk %}">{{ i.title }}</a></h3>
+                                            <h3 class="product__items--content__title h3"><a href="{% url 'checkout_url' i.pk %}">{{ i.title }}</a></h3>
+                                            <h4 class="product__items--content__title h4"><a href="{% url 'checkout_url' i.pk %}">{{ i.description }}</a></h4>
                                             <div class="product__items--price">
                                                 <span class="current__price">{{ i.price }} so'm</span>
                                             </div>
